@@ -11,7 +11,7 @@ const httpServer = createServer(app);
 const io = new Server(httpServer, { cors: 'http://localhost:5000' });
 
 io.on("connection", (socket) => {
-  console.log("server connected")
+  //console.log("server connected")
 
   socket.on('beginPath', (arg) => {
     socket.broadcast.emit('beginPath', arg)
@@ -22,12 +22,12 @@ io.on("connection", (socket) => {
   })
 
   socket.on('changeConfig', (arg) => {
-    console.log(arg)
+    //console.log(arg)
     socket.broadcast.emit('changeConfig', arg)
   });
 
   socket.on('changeMenuItem', (arg) => {
-    console.log(arg)
+    //console.log(arg)
     socket.broadcast.emit('changeMenuItem', arg)
   })
 });
